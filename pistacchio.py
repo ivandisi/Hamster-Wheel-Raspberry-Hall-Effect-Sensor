@@ -16,6 +16,49 @@ Digital_PIN = 22
 sensor = Button(Digital_PIN, pull_up=True, bounce_time=0.0009)
 sensor.when_pressed = lambda: myCounter()  
 
+def getMaxSpeed(day):
+    Qry = Query()
+    events = db.search((Qry.data == day))
+    CIRCUMFERENCE_M = tripLength / 100
+    N_LAPS = 50
+    MAX_SPEED_M_S = 4.0
+    MIN_DT = (CIRCUMFERENCE_M * N_LAPS) / MAX_SPEED_M_S
+
+    events.sort(key=lambda e: e["time"])
+    times = [e["time"] for e in events]
+
+    results = []
+
+    for i in range(len(times) - N_LAPS):
+        dt = times[i + N_LAPS] - times[i]
+
+        if dt < MIN_DT:
+            continue
+
+        speed = (CIRCUMFERENCE_M * N_LAPS) / dt
+
+        results.append({
+            "start_index": i,
+            "dt": dt,
+            "speed_m_s": speed,
+            "speed_km_h": speed * 3.6,
+            "from_time": times[i],
+            "to_time": times[i + N_LAPS]
+        })
+
+    if not results:
+        #print("Nessuna velocità realistica trovata 🐹")
+        return {'speed': "", 'speedKM': "", 'deltaT': ""}
+    else:
+        max_speed = max(results, key=lambda r: r["speed_m_s"])
+
+        #print(f"Velocità max (media su {N_LAPS} giri): "
+        #      f"{max_speed['speed_m_s']:.2f} m/s "
+        #      f"({max_speed['speed_km_h']:.2f} km/h)")
+
+        #print(f"Δt: {max_speed['dt']:.2f} s")
+        return {'speed': f"{max_speed['speed_m_s']:.2f} m/s ", 'speedKM': f"({max_speed['speed_km_h']:.2f} km/h)", 'deltaT': f"Deltat: {max_speed['dt']:.2f} s"}
+
 def getTripsByYear(year):
     arr = []
     for number in range(1, 13):
@@ -61,6 +104,14 @@ class ApiHandler(BaseHTTPRequestHandler):
                 self.wfile.write(b"Parametro 'day' mancante")
                 return
             result = getTripsByDay(day)
+        elif path == "/getMaxSpeed":
+          day = params.get("day", [None])[0]
+          if not day:
+              self.send_response(400)
+              self.end_headers()
+              self.wfile.write(b"Parametro 'day' mancante")
+              return
+          result = getMaxSpeed(day)
         elif path == "/getByYear":
             year = params.get("year", [None])[0]
             if not year:
