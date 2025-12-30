@@ -11,6 +11,7 @@ import androidx.compose.ui.graphics.SolidColor
 import it.id.pistacchio.Constants
 import it.id.pistacchio.net.MyApi
 import it.id.pistacchio.net.model.DataByYear
+import it.id.pistacchio.ui.theme.PRIMARY
 import retrofit2.Response
 import java.time.LocalDate
 
@@ -45,7 +46,7 @@ class YearViewModel : ViewModel() {
                                 listOf(Bars.Data(
                                     label = "Trips",
                                     value = item.trips.toDouble(),
-                                    color = SolidColor(Color.Red)
+                                    color = SolidColor(PRIMARY)
                                 )
                                 ))
                         )

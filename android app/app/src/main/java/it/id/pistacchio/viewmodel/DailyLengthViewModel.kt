@@ -11,6 +11,7 @@ import androidx.compose.ui.graphics.SolidColor
 import it.id.pistacchio.Constants
 import it.id.pistacchio.net.MyApi
 import it.id.pistacchio.net.model.DataByYear
+import it.id.pistacchio.ui.theme.SECONDARY
 import retrofit2.Response
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
@@ -57,7 +58,7 @@ class DailyLengthViewModel : ViewModel() {
                                         Bars.Data(
                                         label = "Length in meter",
                                         value = item.length.toDouble() / 100,
-                                        color = SolidColor(Color.Blue)
+                                        color = SolidColor(SECONDARY)
                                     ),
                                 ))
                         )

@@ -14,6 +14,7 @@ import it.id.pistacchio.net.MyApi
 import it.id.pistacchio.net.NoInternetException
 import it.id.pistacchio.net.model.DataByYear
 import it.id.pistacchio.net.model.SpeedModel
+import it.id.pistacchio.ui.theme.PRIMARY
 import kotlinx.serialization.descriptors.PrimitiveKind
 import retrofit2.Response
 import java.io.IOException
@@ -81,7 +82,7 @@ open class DailyViewModel : ViewModel() {
                                         Bars.Data(
                                         label = "Trips",
                                         value = item.trips.toDouble(),
-                                        color = SolidColor(Color.Red)
+                                        color = SolidColor(PRIMARY)
                                     ),
                                 ))
                         )
