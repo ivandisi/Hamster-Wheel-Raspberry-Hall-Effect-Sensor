@@ -14,13 +14,13 @@ from signal import pause
 # CONFIG
 # =======================
 DB_FILE = "pistacchiodbnew2.json"
-# Length of wheel, 29cm diameter (91 circumference)
-tripLength = 91
+# Length of wheel, 28cm diameter (88 circumference)
+tripLength = 88
 # Sensor PIN
 Digital_PIN = 22
 # Debouncing time 10ms
 MIN_TRIP_DT = 0.01 
-# High level filter, max 1 trip in 200ms on a 29cm diameter wheel (realistic max hamster speed)
+# High level filter, max 1 trip in 200ms on a 28cm diameter wheel (realistic max hamster speed)
 MAX_ONE_IN = 0.2
 # Watchdog
 WATCHDOG_TIMEOUT = 30 
