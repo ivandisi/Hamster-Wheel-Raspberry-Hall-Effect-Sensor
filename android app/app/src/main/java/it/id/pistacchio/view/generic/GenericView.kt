@@ -117,7 +117,7 @@ fun RecapView(viewModel: DailyViewModel = viewModel()) {
             )
 
             Text(
-                text = "${viewModel.speed.value.speed}${viewModel.speed.value.speedKM}",
+                text = "${viewModel.speed.value.speed} ${viewModel.speed.value.speedKM}",
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier
