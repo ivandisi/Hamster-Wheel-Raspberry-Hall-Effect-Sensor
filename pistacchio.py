@@ -203,7 +203,7 @@ def getMaxSpeed(day):
     return {
         'speed': f"{best['speed']:.2f} m/s",
         'speedKM': f"({best['speedKM']:.2f} km/h)",
-        'deltaT': f"Deltat: {best['deltaT']:.2f} s"
+        'deltaT': f"deltaT: {best['deltaT']:.2f} s"
     }
 
 # =======================
