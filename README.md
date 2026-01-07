@@ -61,7 +61,7 @@ Before start set the configuration about your wheel and the Digital PIN used
 
 
 ```bash
-  sudo python3 ~/pistacchio.py
+  sudo python3 ~/rasberry.py
 ```
 
 Requirements:
