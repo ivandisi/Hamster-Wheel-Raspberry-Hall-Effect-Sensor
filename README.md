@@ -1,6 +1,6 @@
 # Hamster Wheel Hall Effect Sensor
 
-POC of a simple solution based on Rasberry PI with a Hall Effect Sensor to retrive metric from wheel trips 
+POC of a simple solution based on Raspberry PI with a Hall Effect Sensor to retrive metric from wheel trips 
 
 * Local Server with simple API SET
 * Local Server DB 
