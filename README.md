@@ -13,7 +13,7 @@ The doc should provide all information needed to run the project, but if not fee
 
 ### POC
 
-Project is based on Rasberry PI Board and AZ-Delivery KY-024 (+ magnet)
+Project is based on Raspberry PI Board and AZ-Delivery KY-024 (+ magnet)
 
 <p align="center" >
   <img src="https://www.az-delivery.de/cdn/shop/products/ky-024-linear-magnetic-hall-sensor-726599.jpg"
@@ -28,7 +28,7 @@ Project is based on Rasberry PI Board and AZ-Delivery KY-024 (+ magnet)
 
 * AZ-Delivery KY-024 -> [LINK](https://www.az-delivery.de/it/products/hall-sensor-modul?srsltid=AfmBOorUrREHiLzq2KTRPAs1MlyRB_Pjx9o7F6O_OREGu73n7KSz_wx4)
 
-* Rasberry PI Board -> [LINK](https://www.raspberrypi.com/)
+* Raspberry PI Board -> [LINK](https://www.raspberrypi.com/)
 
 
 ### HARDWARE EXAMPLE
@@ -61,7 +61,7 @@ Before start set the configuration about your wheel and the Digital PIN used
 
 
 ```bash
-  sudo python3 ~/rasberry.py
+  sudo python3 ~/raspberry.py
 ```
 
 Requirements:
