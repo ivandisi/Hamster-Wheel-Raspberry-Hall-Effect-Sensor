@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Weekly Report</title>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Weekly Chart</h1>
+
+        <div class="controls">
+            <label>
+            Select a date:
+            <input type="date" [value]="todayString" (change)="onDateChange($event)" />
+            </label>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-button" [class.active]="activeTab === 1" (click)="switchTab(1)">Trips</button>
+            <button class="tab-button" [class.active]="activeTab === 2" (click)="switchTab(2)">Distance in km</button>
+        </div>
+
+        <div class="tab-content">
+            <div *ngIf="activeTab === 1">
+                <div class="chart">
+                    <div class="bar-container" *ngFor="let value of values; let i = index">
+                        <div class="value">{{ value.trips }}</div>
+                        <div class="bar" [style.height.px]="maxTrips ? (value.trips / maxTrips) * 180 : 0"></div>
+                        <div class="day">{{ daysLabel[i] }}</div>
+                    </div>
+                </div>
+            </div>  
+            <div *ngIf="activeTab === 2">
+                <div class="chart">
+                    <div class="bar-container" *ngFor="let value of values; let i = index">
+                        <div class="value">{{ (value.length / 100000) | number:'1.2-2' }}</div>
+                        <div class="bar-red" [style.height.px]="maxTrips ? (value.trips / maxTrips) * 180 : 0"></div>
+                        <div class="day">{{ daysLabel[i] }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

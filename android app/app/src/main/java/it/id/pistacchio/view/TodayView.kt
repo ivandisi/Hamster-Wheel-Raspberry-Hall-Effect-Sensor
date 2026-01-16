@@ -9,11 +9,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import it.id.pistacchio.view.generic.DailyRowChart
+import it.id.pistacchio.view.generic.Header
 
 @Composable
 fun DailyView() {
     Column {
-        Spacer(modifier = Modifier.size(45.dp))
+        Header()
+
         Text(
             text = "Today I'm doing ...",
             modifier = Modifier

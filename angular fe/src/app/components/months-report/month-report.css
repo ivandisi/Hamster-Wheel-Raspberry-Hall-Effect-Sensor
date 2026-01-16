@@ -1,0 +1,99 @@
+
+:host {
+  display: block;
+  padding: 30px;
+  background: #f4f6f8;
+}
+
+.card {
+  max-width: 700px;
+  margin: auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+h1 {
+    margin-bottom: 16px;
+}
+
+.controls {
+    margin-bottom: 24px;
+}
+
+input[type="date"] {
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.chart {
+    display: flex;
+    align-items: flex-end;
+    height: 220px;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.bar-container {
+    flex: 1;
+    text-align: center;
+}
+
+.bar {
+    width: 100%;
+    background: linear-gradient(180deg, #4f8cff, #2563eb);
+    border-radius: 6px 6px 0 0;
+    transition: height 0.3s ease;
+}
+
+.bar-red {
+    width: 100%;
+    background: linear-gradient(180deg, #ff6b6b, #c0392b);
+    border-radius: 6px 6px 0 0;
+    transition: height 0.3s ease;
+}
+
+.day {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #555;
+}
+
+.value {
+    font-size: 12px;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.tab-button {
+  padding: 10px 20px;
+  border: none;
+  background: #e0e4e8;    
+  color: #333;
+  cursor: pointer;
+  border-radius: 8px 8px 0 0;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+.tab-button:hover {
+  background: #d0d5da;
+  transform: translateY(-2px);
+}
+
+.tab-button.active {
+  background: #2563eb;      
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.tab-content {
+  border: solid;
+  border-color:  #e0e4e8;
+  padding: 10px;
+}
