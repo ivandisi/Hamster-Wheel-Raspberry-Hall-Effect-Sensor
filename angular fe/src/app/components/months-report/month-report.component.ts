@@ -1,6 +1,6 @@
-import { Component, ElementRef, ViewChild, AfterViewInit, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Trip } from '../../model/Trip';
 import { ChangeDetectorRef } from '@angular/core';
 
@@ -21,6 +21,8 @@ export class MonthReportComponent implements OnInit {
   values: Trip[] = [];
   year: number = 0;
   maxTrips: number = 0;
+
+  loading = false;
 
   todayString: string = '';
 
@@ -54,10 +56,12 @@ export class MonthReportComponent implements OnInit {
   }
 
   callApiWithDates(year: number) {
+    this.loading = true;
     const params = { year: year };
 
     this.http.get<Trip[]>('/api/getByYear', { params }).subscribe({
       next: res => {
+        this.loading = false;
         this.values = res.map(v => ({
           ...v,
           trips: Number(v.trips) 
@@ -65,7 +69,11 @@ export class MonthReportComponent implements OnInit {
         this.maxTrips = Math.max(...this.values.map(v => v.trips));
         this.cdr.detectChanges();
       },
-      error: err => console.error('Errore API:', err)
+      error: err => {
+        this.loading = false;
+        console.error('Errore API:', err)
+      }
+ 
     });
   }
 

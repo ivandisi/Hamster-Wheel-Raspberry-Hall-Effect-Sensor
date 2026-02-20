@@ -1,6 +1,6 @@
-import { Component, ElementRef, ViewChild, AfterViewInit, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Trip } from '../../model/Trip';
 import { ChangeDetectorRef } from '@angular/core';
 
@@ -19,6 +19,8 @@ export class WeekReportComponent implements OnInit {
   maxTrips: number = 0;
 
   todayString: string = '';
+
+  loading = false;
 
   activeTab: number = 1;
 
@@ -65,6 +67,7 @@ export class WeekReportComponent implements OnInit {
   }
 
   callApiWithDates(dates: string[]) {
+    this.loading = true;
     const jsonStr = JSON.stringify(dates);
     const base64 = btoa(jsonStr);
 
@@ -72,6 +75,7 @@ export class WeekReportComponent implements OnInit {
 
     this.http.get<Trip[]>('/api/getByDays', { params }).subscribe({
       next: res => {
+        this.loading = false;
         this.values = res.map(v => ({
           ...v,
           trips: Number(v.trips)  
@@ -79,7 +83,10 @@ export class WeekReportComponent implements OnInit {
         this.maxTrips = Math.max(...this.values.map(v => v.trips));
         this.cdr.detectChanges();
       },
-      error: err => console.error('Errore API:', err)
+      error: err => {
+        console.error('Errore API:', err)
+        this.loading = false;
+      }
     });
   }
 

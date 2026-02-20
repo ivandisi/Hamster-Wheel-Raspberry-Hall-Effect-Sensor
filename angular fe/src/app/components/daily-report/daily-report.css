@@ -31,30 +31,42 @@ input[type="date"] {
 
 .chart {
     display: flex;
-    align-items: flex-end;
-    height: 220px;
-    gap: 16px;
+    flex-direction: column;
+    gap: 12px;
     padding: 16px 0;
-    border-bottom: 1px solid #ddd;
 }
 
 .bar-container {
-    flex: 1;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.bar,
+.bar-red {
+    height: 24px;       
+    width: 0;         
+    border-radius: 6px;
+    transition: width 0.3s ease;
 }
 
 .bar {
     width: 100%;
     background: linear-gradient(180deg, #4f8cff, #2563eb);
-    border-radius: 6px 6px 0 0;
+    border-radius: 0 6px 6px 0;
     transition: height 0.3s ease;
 }
 
 .bar-red {
     width: 100%;
     background: linear-gradient(180deg, #ff6b6b, #c0392b);
-    border-radius: 6px 6px 0 0;
+    border-radius: 0 6px 6px 0;
     transition: height 0.3s ease;
+}
+
+.hour {
+    font-size: 13px;
+    color: #555;
 }
 
 .day {
@@ -65,7 +77,6 @@ input[type="date"] {
 
 .value {
     font-size: 12px;
-    margin-bottom: 6px;
     color: #333;
 }
 

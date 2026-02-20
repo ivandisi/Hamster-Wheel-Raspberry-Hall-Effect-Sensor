@@ -21,7 +21,11 @@
             <button class="tab-button" [class.active]="activeTab === 2" (click)="switchTab(2)">Distance in km</button>
         </div>
 
-        <div class="tab-content">
+        <div *ngIf="loading" class="spinner-container">
+            <div class="spinner"></div>
+        </div>
+
+        <div *ngIf="!loading" class="tab-content">
             <div *ngIf="activeTab === 1">
                 <div class="chart">
                     <div class="bar-container" *ngFor="let value of values; let i = index">

@@ -3,4 +3,5 @@ export interface Trip {
   trips: number;
   length: number;
   month: string;
+  hour: string;
 }

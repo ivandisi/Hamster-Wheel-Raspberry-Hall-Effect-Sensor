@@ -3,10 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { WeekReportComponent } from './components/week-report/week-report.component';
 import { MonthReportComponent } from './components/months-report/month-report.component';
 import { DailyRecapComponent } from './components/daily-recap/daily-recap.component';
+import { DailyReportComponent } from './components/daily-report/daily-report.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, WeekReportComponent, MonthReportComponent, DailyRecapComponent],
+  imports: [RouterOutlet, WeekReportComponent, MonthReportComponent, DailyRecapComponent, DailyReportComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
