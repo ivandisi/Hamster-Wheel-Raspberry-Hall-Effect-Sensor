@@ -1,6 +1,6 @@
 # Hamster Wheel Hall Effect Sensor
 
-POC of a simple solution based on Rasberry PI with a Hall Effect Sensor to retrive metric from wheel trips 
+POC of a simple solution based on Raspberry PI with a Hall Effect Sensor to retrive metric from wheel trips 
 
 * Local Server with simple API SET
 * Local Server DB 
@@ -13,7 +13,7 @@ The doc should provide all information needed to run the project, but if not fee
 
 ### POC
 
-Project is based on Rasberry PI Board and AZ-Delivery KY-024 (+ magnet)
+Project is based on Raspberry PI Board and AZ-Delivery KY-024 (+ magnet)
 
 <p align="center" >
   <img src="https://www.az-delivery.de/cdn/shop/products/ky-024-linear-magnetic-hall-sensor-726599.jpg"
@@ -28,13 +28,13 @@ Project is based on Rasberry PI Board and AZ-Delivery KY-024 (+ magnet)
 
 * AZ-Delivery KY-024 -> [LINK](https://www.az-delivery.de/it/products/hall-sensor-modul?srsltid=AfmBOorUrREHiLzq2KTRPAs1MlyRB_Pjx9o7F6O_OREGu73n7KSz_wx4)
 
-* Rasberry PI Board -> [LINK](https://www.raspberrypi.com/)
+* Raspberry PI Board -> [LINK](https://www.raspberrypi.com/)
 
 
 ### HARDWARE EXAMPLE
 
 <p align="center" >
-  <img src="https://github.com/ivandisi/Hamster-Wheel-Rasberry-Hall-Effect-Sensor/blob/main/other/example.jpg" height="200">
+  <img src="https://github.com/ivandisi/Hamster-Wheel-Raspberry-Hall-Effect-Sensor/blob/main/other/example.jpg" height="200">
 </p>
 
 <p align="center" >(In my case I modded the sensor for a better fit)</p>
@@ -61,7 +61,7 @@ Before start set the configuration about your wheel and the Digital PIN used
 
 
 ```bash
-  sudo python3 ~/rasberry.py
+  sudo python3 ~/raspberry.py
 ```
 
 Requirements:
@@ -97,7 +97,7 @@ To try in local without any CORS error
 ```
 
 <p align="center" >
-  <img src="https://github.com/ivandisi/Hamster-Wheel-Rasberry-Hall-Effect-Sensor/blob/main/other/angular.png" height="200">
+  <img src="https://github.com/ivandisi/Hamster-Wheel-Raspberry-Hall-Effect-Sensor/blob/main/other/angular.png" height="200">
 </p>
 
 ### To run the Android APP:
@@ -105,11 +105,11 @@ To try in local without any CORS error
 Import it in Android Studio and run it
 
 <p align="center" >
-  <img src="https://github.com/ivandisi/Hamster-Wheel-Rasberry-Hall-Effect-Sensor/blob/main/other/1.jpg" height="300">
-  <img src="https://github.com/ivandisi/Hamster-Wheel-Rasberry-Hall-Effect-Sensor/blob/main/other/2.jpg" height="300">
-  <img src="https://github.com/ivandisi/Hamster-Wheel-Rasberry-Hall-Effect-Sensor/blob/main/other/3.jpg" height="300">
-  <img src="https://github.com/ivandisi/Hamster-Wheel-Rasberry-Hall-Effect-Sensor/blob/main/other/4.jpg" height="300">
-  <img src="https://github.com/ivandisi/Hamster-Wheel-Rasberry-Hall-Effect-Sensor/blob/main/other/5.jpg" height="300">
+  <img src="https://github.com/ivandisi/Hamster-Wheel-Raspberry-Hall-Effect-Sensor/blob/main/other/1.jpg" height="300">
+  <img src="https://github.com/ivandisi/Hamster-Wheel-Raspberry-Hall-Effect-Sensor/blob/main/other/2.jpg" height="300">
+  <img src="https://github.com/ivandisi/Hamster-Wheel-Raspberry-Hall-Effect-Sensor/blob/main/other/3.jpg" height="300">
+  <img src="https://github.com/ivandisi/Hamster-Wheel-Raspberry-Hall-Effect-Sensor/blob/main/other/4.jpg" height="300">
+  <img src="https://github.com/ivandisi/Hamster-Wheel-Raspberry-Hall-Effect-Sensor/blob/main/other/5.jpg" height="300">
 </p>
 
 Before start it, please be sure to address the right IP in the Constants.kt
@@ -136,7 +136,7 @@ Greetings from my hamster Sergente Pistacchio
 </p>
 
 <p align="center" >
-<img src="https://github.com/ivandisi/Hamster-Wheel-Rasberry-Hall-Effect-Sensor/blob/main/other/pistacchio.jpg" height="600">
+<img src="https://github.com/ivandisi/Hamster-Wheel-Raspberry-Hall-Effect-Sensor/blob/main/other/pistacchio.jpg" height="600">
 </p>
 
 
