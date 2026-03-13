@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Trip } from '../../model/Trip';
 import { ChangeDetectorRef } from '@angular/core';
+import { Speed } from '../../model/Speed';
 
 @Component({
   selector: 'daily-report',
@@ -12,6 +13,17 @@ import { ChangeDetectorRef } from '@angular/core';
 })
 
 export class DailyReportComponent implements OnInit {
+
+  speed: Speed = {
+    speed: '',
+    speedKM: 0,
+    deltaT: 0
+  }
+    
+  day: string = '';
+
+  dailyLength: number = 0
+  dailyTotalTrips: number = 0
   
   values: Trip[] = [];
   days: string[] = [];
@@ -52,7 +64,23 @@ export class DailyReportComponent implements OnInit {
       date = new Date(eventOrDate.target.value);
     }
 
+    this.todayString = date.toISOString().slice(0,10);
+    this.day = this.formatDateYYYYMMDD(date)
+
     this.callApiWithDates(this.formatDateYYYYMMDD(date));
+  }
+
+  callSpeedApiWithDates() {
+    const params = { day: this.day };
+
+    this.http.get<Speed>('/api/getMaxSpeed', { params }).subscribe({
+      next: res => {
+        this.speed = res;
+
+        this.cdr.detectChanges();
+      },
+      error: err => console.error('Errore API:', err)
+    });
   }
 
   callApiWithDates(date: string) {
@@ -67,8 +95,15 @@ export class DailyReportComponent implements OnInit {
           ...v,
           trips: Number(v.trips)  
         }));
+
+      
+        this.dailyLength = 0;
+        this.dailyTotalTrips = 0;
+
         this.maxTrips = Math.max(...this.values.map(v => v.trips));
-        this.cdr.detectChanges();
+        this.values.forEach((element) => {this.dailyLength += element.length; this.dailyTotalTrips += element.trips})
+
+        this.callSpeedApiWithDates();
       },
       error: err => {
           this.loading = false;

@@ -4,7 +4,6 @@ import base64
 import json
 from queue import LifoQueue
 from queue import Empty
-from tinydb import TinyDB, Query
 from datetime import datetime
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 from urllib.parse import urlparse, parse_qs

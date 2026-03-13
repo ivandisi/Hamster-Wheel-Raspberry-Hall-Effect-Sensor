@@ -5,6 +5,19 @@
   background: #f4f6f8;
 }
 
+.card-recap {
+  max-width: 700px;
+  margin: auto;
+  background: #BF360C;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.card-recap-text {
+  color: white
+}
+
 .card {
   max-width: 700px;
   margin: auto;
@@ -19,6 +32,7 @@ h1 {
 }
 
 .controls {
+    margin-top: 14px;
     margin-bottom: 24px;
 }
 

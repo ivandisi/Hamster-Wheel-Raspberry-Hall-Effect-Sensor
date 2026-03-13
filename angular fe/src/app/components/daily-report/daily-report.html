@@ -9,6 +9,25 @@
     <div class="card">
         <h1>Daily Chart</h1>
 
+        <div class="card-recap">
+
+            <h1 class="card-recap-text">{{todayString}} Sergente Pistacchio did:</h1>
+
+            <div *ngIf="loading" class="spinner-container">
+                <div class="spinner"></div>
+            </div>
+
+
+            <h2 class="card-recap-text" *ngIf="!loading">Total Daily Trips:</h2>
+            <h3 class="card-recap-text" *ngIf="!loading">{{ dailyTotalTrips }}</h3>
+            <h2 class="card-recap-text" *ngIf="!loading">Total distance in km:</h2>
+            <h3 class="card-recap-text" *ngIf="!loading">{{ (dailyLength / 100000) | number:'1.2-2' }}</h3>
+            <h2 class="card-recap-text" *ngIf="!loading">Speed of the day:</h2>
+            <h3 class="card-recap-text" *ngIf="!loading">{{ speed.speed }} {{ speed.speedKM}} </h3>
+            <h2 class="card-recap-text" *ngIf="!loading">With trips performed in:</h2>
+            <h3 class="card-recap-text" *ngIf="!loading">{{ speed.deltaT }}</h3>
+        </div>
+
         <div class="controls">
             <label>
             Select a date:
